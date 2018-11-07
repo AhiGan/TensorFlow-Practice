@@ -1,6 +1,9 @@
 import tensorflow as tf
 from tensorflow.examples.tutorials.mnist import input_data
 
+config=tf.ConfigProto(log_device_placement=True)
+print(config)
+
 # 读入数据
 mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)  # one_hot=True 编码以概率分布的形式读“单类（只有一个label的值为1）”的标记情况
 
@@ -18,8 +21,8 @@ print(mnist.test.images.shape, mnist.test.labels.shape)  # 测试集
 这里丢弃了图片的空间结构信息，是因为学习任务比较简单所以进行了简化
 '''
 
-sess = tf.InteractiveSession()
-x = tf.placeholder(tf.float32, [None, 784])  # 第二个参数是输入数据的shape，不限条数，每条是784维的向量
+sess = tf.InteractiveSession()  #将当前的session注册为默认session
+x = tf.placeholder(tf.float32, [None, 784])  # 第二个参数是输入数据的shape，第一维None表示不限条数，每条是784维的向量
 W = tf.Variable(tf.zeros([784, 10]))  # 权重
 b = tf.Variable(tf.zeros([10]))  # bias
 
