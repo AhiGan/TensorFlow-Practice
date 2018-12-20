@@ -2,7 +2,7 @@
 <project version="4">
   <component name="PublishConfigData">
     <serverData>
-      <paths name="lnn">
+      <paths name="lnn@10.201.21.92">
         <serverdata>
           <mappings>
             <mapping deploy="/TensorFlow-Practice" local="$PROJECT_DIR$" web="/" />
